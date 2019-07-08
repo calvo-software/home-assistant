@@ -135,7 +135,11 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
             try:
                 data = NetatmoData(auth, data_class, config.get(CONF_STATION))
             except pyatmo.NoDevice:
+<<<<<<< HEAD
                 _LOGGER.info(
+=======
+                _LOGGER.warning(
+>>>>>>> 9cf43dd8ff2c5d3ce2ff8b37fb16313c4d985aca
                     "No %s devices found",
                     NETATMO_DEVICE_TYPES[data_class.__name__]
                 )
@@ -529,8 +533,11 @@ class NetatmoData:
 
     def get_module_names(self):
         """Return all module available on the API as a list."""
+<<<<<<< HEAD
         if self.station is not None:
             return self.station_data.modulesNamesList(station=self.station)
+=======
+>>>>>>> 9cf43dd8ff2c5d3ce2ff8b37fb16313c4d985aca
         return self.station_data.modulesNamesList()
 
     def update(self):
